@@ -5,7 +5,7 @@ I heard about the hackathon yesterday, and now it's 1.5 hours left to deadline, 
 There was info about +100 points for creativity, so that is reason for so strange site, but i hope you will enjoy it :D
 
 Happy Near Spring Hackathon!
-[Test it](https://ippishio.github.io/ "Click")
+[Test it](https://ippishio.github.io/near-helloworld "Click")
 
 > ## Usage
 Left click - orbit
