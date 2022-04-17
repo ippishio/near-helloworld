@@ -1,12 +1,12 @@
-import './style.css'
-import * as THREE from 'https://unpkg.com/three@0.139.2/build/three.module.js';
+
+import * as THREE from 'three';
 import { FontLoader } from 'https://unpkg.com/three@0.139.2/examples/jsm/loaders/FontLoader.js';
 import { TextGeometry } from 'https://unpkg.com/three@0.139.2/examples/jsm/geometries/TextGeometry.js';
 import { OrbitControls } from 'https://unpkg.com/three@0.139.2/examples/jsm/controls/OrbitControls';
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({
- canvas: document.querySelector('#bg'),
+ canvas: document.getElementById('bg'),
 });
 var lasttext = document.getElementById("texxt").textContent;
 renderer.setPixelRatio(window.devicePixelRatio);

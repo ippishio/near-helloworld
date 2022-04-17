@@ -1,4 +1,4 @@
-canvas {
+canvas{
   position: fixed;
   top: 0;
   left: 0;
@@ -69,4 +69,11 @@ canvas {
     height: 50; /* Высота слоя в пикселах */
     left: 10%; /* Положение слоя от левого края */
     top: 50%; /* Положение слоя от верхнего края */
+}
+#err {
+
+	left: 50%;
+	top: 50%;
+	font-size: 40px;
+	z-index: 10;
 }
