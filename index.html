@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ippishio challenge #2</title>
+    <style>
+      html { overflow:  hidden; }
+
+     </style>
+  </head>
+  <body bgcolor="#1f1f1f">
+    <button id="add-text">Hi, NEAR!</button>
+    <button id="log-out">Logout wallet</button>
+    <div id="texxt"> 123</div>
+     <input type="text" id="name" name="name" placeholder = "Your Name, please :)">
+    <img src="near.png" id="png">
+    <img src="rotate.png" id="pngg" >
+    <script src="https://cdn.jsdelivr.net/npm/near-api-js@0.41.0/dist/near-api-js.min.js"></script>
+    <canvas id = "bg"> </canvas>
+    <script type="module" src="/main.js"></script>
+    <script id="nearconnect">
+      // connect to NEAR
+      const near = new nearApi.Near({
+        keyStore: new nearApi.keyStores.BrowserLocalStorageKeyStore(),
+        networkId: 'testnet',
+        nodeUrl: 'https://rpc.testnet.near.org',
+        walletUrl: 'https://wallet.testnet.near.org'
+      });
+      
+      // connect to the NEAR Wallet
+      const wallet = new nearApi.WalletConnection(near, 'my-app');
+  
+      // connect to a NEAR smart contract
+      const contract = new nearApi.Contract(wallet.account(), 'helloworld.ippishio.testnet', {
+        viewMethods: [],
+        changeMethods: ['greet']
+      });
+      const texxt = document.getElementById('texxt');
+      const button = document.getElementById('add-text');
+      const logoutbut = document.getElementById('log-out');
+      if (!wallet.isSignedIn()) {
+        button.textContent = 'SignIn with NEAR'
+        logoutbut.style.visibility = "hidden";
+      } else {
+        logoutbut.style.visibility = "visible";
+      }
+  
+     logoutbut.addEventListener('click', () => {
+      wallet.signOut();
+      window.location.reload();
+      console.log("logged out");
+     })
+  
+      // Either sign in or call the addMessage change method on button click
+      button.addEventListener('click', () => {
+        if (wallet.isSignedIn()) {
+          contract.greet({
+            args: { name: document.getElementById('name').value },
+          }).then(greeting => {
+            texxt.textContent = greeting;
+          });
+        } else {
+          wallet.requestSignIn({
+            contractId: 'helloworld.ippishio.testnet',
+            methodNames: ['greet']
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

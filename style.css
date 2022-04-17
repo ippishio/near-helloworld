@@ -1,0 +1,72 @@
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+}
+#png {
+	position: absolute;
+	z-index: 100;
+}
+#pngg {
+	position: absolute;
+	z-index: 100;
+	right: 3%;
+	top: 80%;
+	width: 64px;
+	height: 64px;
+}
+#log-out {
+	position: absolute;
+	z-index: 100;
+	right: 5%;
+	top: 5%;
+	width: 80px;
+	height: 20px;
+	background-color: #3c3b3b;
+	font-size: 10px;
+	display:block;
+	appearance: none;
+	border: 0;
+	border-radius: 5px;
+	color: #fa024d;
+}
+#add-text{
+	position: absolute;
+	left: 10%;
+	top: 55%;
+	width: 150px;
+	height: 50px;
+	z-index: 100;
+	display:block;
+	font-size: 20px;
+    color: #f9e491;
+	background-color: #3c3b3b;
+	appearance: none;
+	border: 0;
+	border-radius: 5px;
+}
+#texxt{
+	visibility: hidden;
+	position: absolute;
+	top: 10px;
+	width: 100%;
+	text-align: center;
+	z-index: 100;
+	display:block;
+}
+#name {
+	border: 0;
+	border-radius: 5px;
+	background-color: #3c3b3b;
+	position: absolute;
+	margin: auto auto;
+	padding: 10px; /* Поля вокруг текста */
+    text-align: left; /* Выравнивание содержимого слоя по левому краю */
+	z-index: 100;
+	display:block;
+	width: 100; /* Ширина слоя в пикселах */
+    height: 50; /* Высота слоя в пикселах */
+    left: 10%; /* Положение слоя от левого края */
+    top: 50%; /* Положение слоя от верхнего края */
+}
