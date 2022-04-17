@@ -7,3 +7,11 @@ There was info about +100 points for creativity, so that is reason for so strang
 Happy Near Spring Hackathon!
 [Test it](https://ippishio.github.io/ "Click")
 
+> ## Usage
+Left click - orbit
+
+Right click - pan
+
+Mouse wheel - zoom
+
+
